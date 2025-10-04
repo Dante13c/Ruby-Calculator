@@ -8,7 +8,7 @@ register_4 = []
 
 module Register
   def self.storage(data)
-    puts data
+    puts "Data from input to register: #{data.inspect}"
   end
 end
 

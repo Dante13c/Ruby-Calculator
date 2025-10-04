@@ -9,7 +9,6 @@ require_relative 'input_helper'
 
 
 module ActiveAgent
-  # Test Method: Experimental
   def self.init  
  
     # Process Starter
@@ -17,7 +16,7 @@ module ActiveAgent
     while @active do
       @key = STDIN.getch
       
-      # If 'ese' is pressed breakout of loop
+      # If 'esc' is pressed breakout of loop
       if @key == 
         Operator::OPERATIONS[:CLOSE]
         break

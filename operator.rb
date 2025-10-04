@@ -3,12 +3,7 @@ require_relative 'register'
 
 module Operator
   def self.actions(input)
-  
-    def self.number?(str)
-      !!Float(str) rescue false 
-    end 
-
-
+    
   case input
     when OPERATIONS[:ADD]
       puts "You Selected: Addition"
@@ -21,21 +16,23 @@ module Operator
       return
     when OPERATIONS[:DIV]
       puts "You Selected: Division"
+      return
     else
-      is_number = number?(input)
-      if is_number
-        puts "your number: #{input.inspect}"
-      end
+      return
     end
   end
 
   OPERATIONS = {
     CLOSE: "\e",
     CTRl_C: "\u0003",
-
+    
     ADD: "+",
     SUB: "-",
     MUL: "*",
-    DIV: "/"
+    DIV: "/",
+    DOT: ".",
+
+    EVALUATE_RETURN: "\r",
+    EVALUATE_EQUAL: "="
   }
 end

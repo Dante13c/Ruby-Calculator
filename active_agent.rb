@@ -17,7 +17,7 @@ module ActiveAgent
     while @active do
       @key = STDIN.getch
       
-      # If 'ese' is pressed = breakout
+      # If 'ese' is pressed breakout of loop
       if @key == 
         Operator::OPERATIONS[:CLOSE]
         break

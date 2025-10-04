@@ -5,19 +5,17 @@ module Operator
   def self.actions(input)
 
   case input
-    when OPERATIONS[:CLOSE] 
-      return
     when OPERATIONS[:ADD]
-      puts "You Pressed: #{input.inspect}"
+      puts "You Selected: Addition"
       return
     when OPERATIONS[:SUB]
-      puts "You Pressed: #{input.inspect}"
+      puts "You Selected: Subtraction "
       return
     when OPERATIONS[:MUL]
-      puts "You Pressed: #{input.inspect}"
+      puts "You Selected: Multiplication"
       return
     when OPERATIONS[:DIV]
-      puts "You Pressed: #{input.inspect}"
+      puts "You Selected: Division"
     else
       puts "#{input.inspect} is not a valid operator"
     end
@@ -25,7 +23,7 @@ module Operator
 
   OPERATIONS = {
     CLOSE: "\e",
-    CTRl_C: "",
+    CTRl_C: "\u0003",
 
     ADD: "+",
     SUB: "-",

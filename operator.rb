@@ -17,8 +17,14 @@ module Operator
     when OPERATIONS[:DIV]
       puts "You Selected: Division"
       return
-    else
+    when OPERATIONS[:EVALUATE_RETURN]
+      puts "Enter Evaluation"
       return
+    when OPERATIONS[:EVALUATE_EQUAL]
+      puts "Equal Evaluation"
+      return
+    else
+      Register::storage(input)
     end
   end
 

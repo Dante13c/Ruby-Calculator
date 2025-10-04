@@ -8,7 +8,7 @@ register_4 = []
 
 module Register
   def self.storage(data)
-    
+    puts data
   end
 end
 

@@ -8,7 +8,7 @@ module InputProcessor
     filter_string = input.to_s
 
     # Number validation
-    def self.number?(str)
+    def self.valid?(str)
 
       case str
         when Operator::OPERATIONS[:ADD] then return true
@@ -23,9 +23,9 @@ module InputProcessor
       end
     end
     
-    is_number = number?(filter_string)
+    char = valid?(filter_string)
     
-    if is_number 
+    if char 
       puts "your filtered string: #{filter_string.inspect}"
     else
       return

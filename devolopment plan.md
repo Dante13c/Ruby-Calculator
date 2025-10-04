@@ -3,8 +3,8 @@
 #### Feature integration 
 
 **Main**: processes 
-- [ ] **Active Agent**: Process loop
-- [ ] **Input Helper**: input filtering
+- [x] **Active Agent**: Process loop
+- [x] **Input Helper**: input filtering
 - [ ] **memory**: RAM
 - [ ] **Operator**: Action Selection
 

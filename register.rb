@@ -1,14 +1,20 @@
 # Module Imports
 
-register_1 = []
-register_2 = []
-register_3 = []
-register_4 = []
 
 
 module Register
+  @register_1 = []
+
   def self.storage(data)
-    puts "Data from input to register: #{data.inspect}"
+    @register_1.push(data)
+    print "#{@register_1}\n"
+
+  end
+
+  def self.all
+    @register_1
   end
 end
+
+
 

@@ -8,7 +8,6 @@ OperatorCurrent = []
 module Register
   @register_1 = []
   @register_2 = []
-  @register_3 = []
 
   def self.storage_num(data, char_type, payload) 
     char = data
@@ -21,13 +20,15 @@ module Register
         print "Register 1: #{@register_1}\n"
       when !is_num && is_operator
         if @register_2.empty?
-          @register_2.push(char) 
+          OperatorCurrent.push(char) 
           print "Register 2: #{@register_2}\n"
           FirstOperand.push(@register_1)
           @register_1 = []
-        else
+        else 
           return
         end
+      else
+        SecondOperand.push(@register_1)
     end
 
 

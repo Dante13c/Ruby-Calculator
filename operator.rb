@@ -1,5 +1,6 @@
 # Module Imports
 require_relative 'register'
+require_relative 'logic_module'
 
 module Operator
   def self.actions(input)
@@ -24,6 +25,8 @@ module Operator
       Register::storage_num(input, false, true)
       return
     when OPERATIONS[:EVALUATE_RETURN]
+      LogicModule::interpreter(FirstOperand, SecondOperand, OperatorCurrent)
+      puts "First Operand:#{FirstOperand} Second Operand:#{SecondOperand} Operation: #{OperatorCurrent}"
       return
     when OPERATIONS[:EVALUATE_EQUAL]
     else

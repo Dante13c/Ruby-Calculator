@@ -6,25 +6,28 @@ module Operator
     
   case input
     when OPERATIONS[:ADD]
-      puts "#{FirstOperand}"
+        if FirstOperand.empty?
+          Register::storage_num(input, false, true)
+          puts "FirstOperand: #{FirstOperand}"
+        elsif SecondOperand.empty? && !FirstOperand.empty?
+          puts "addition"
+        end
+      #Register::storage_num(input, false, true)
       return
     when OPERATIONS[:SUB]
-      puts "You Selected: Subtraction "
+      Register::storage_num(input, false, true)
       return
     when OPERATIONS[:MUL]
-      puts "You Selected: Multiplication"
+      Register::storage_num(input, false, true)
       return
     when OPERATIONS[:DIV]
-      puts "You Selected: Division"
+      Register::storage_num(input, false, true)
       return
     when OPERATIONS[:EVALUATE_RETURN]
-      puts "Enter Evaluation"
       return
     when OPERATIONS[:EVALUATE_EQUAL]
-      puts "Equal Evaluation"
-      return
     else
-      Register::storage(input)
+      Register::storage_num(input, true, false)
     end
   end
 

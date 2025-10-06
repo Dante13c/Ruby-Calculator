@@ -6,7 +6,7 @@ module Operator
     
   case input
     when OPERATIONS[:ADD]
-      puts "You Selected: Addition"
+      puts "#{FirstOperand}"
       return
     when OPERATIONS[:SUB]
       puts "You Selected: Subtraction "

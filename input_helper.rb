@@ -24,23 +24,12 @@ module InputProcessor
       end
     end
 
-    def self.number?(str)
-      !!Float(str) rescue false
-    end
-   
     # Checks if valid to print as an integer(true) or not(false)
     char = valid?(filter_string)
     
     # If char is valid, send to operator as int else send as is  
     if char
-      is_num = number?(filter_string)
-
-      # If char  is valid and  is_num is true data is sent to operator
-      if is_num
-        Operator::actions(filter_string)
-      else   
-        Operator::actions(filter_string)
-      end
+      Operator::actions(filter_string)
     else
       return        # If neither valid for print or an operation do nothing 
     end

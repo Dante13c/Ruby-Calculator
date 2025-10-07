@@ -30,25 +30,25 @@ module LogicModule
     case operator[0]
       when Operator::OPERATIONS[:ADD]
         result = add(first, second)
-        puts "Result: #{result}"
+        puts "Result: #{result.round(2)}"
         FirstOperand.clear
         SecondOperand.clear
         OperatorCurrent.clear
       when Operator::OPERATIONS[:SUB]
         result = sub(first, second)
-        puts "Result: #{result}"
+        puts "Result: #{result.round(2)}"
         FirstOperand.clear
         SecondOperand.clear
         OperatorCurrent.clear
       when Operator::OPERATIONS[:MUL]
         result = mul(first, second)
-        puts "Result: #{result}"
+        puts "Result: #{result.round(2)}"
         FirstOperand.clear
         SecondOperand.clear
         OperatorCurrent.clear
       when Operator::OPERATIONS[:DIV]
         result = div(first, second)
-        puts "Result: #{result}"
+        puts "Result: #{result.round(2)}"
         FirstOperand.clear
         SecondOperand.clear
         OperatorCurrent.clear

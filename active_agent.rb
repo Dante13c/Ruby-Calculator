@@ -10,9 +10,12 @@ require_relative 'input_helper'
 
 module ActiveAgent
   def self.init  
- 
+    
+
+    
     # Process Starter
     @active = true
+    print "Press 'esc'or 'CTRl + C' to stop running proccess"
     while @active do
       @key = STDIN.getch
       

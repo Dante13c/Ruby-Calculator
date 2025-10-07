@@ -16,14 +16,17 @@ module Register
     case
       when is_num && !is_operator
         @register_1.push(char)
-        print "Register 1: #{@register_1}\n"
+        runnin_current = @register_1.join
+        system('clear')
+        print "Calculator: #{runnin_current}\n"
       when !is_num && is_operator
         if @register_1.empty?
           puts "cant do it bud, sorry nothings here!"
         else
           if OperatorCurrent.empty?
-            OperatorCurrent.push(char) 
-            print "Operator: #{OperatorCurrent}\n"
+            OperatorCurrent.push(char)
+            system('clear')
+            print "Calculator: #{@register_1.join} #{OperatorCurrent[0].to_s}\n"
             FirstOperand.push(@register_1)
             @register_1 = []
           else 
@@ -38,6 +41,3 @@ module Register
 
   end
 end
-
-
-

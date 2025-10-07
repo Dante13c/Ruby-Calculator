@@ -35,6 +35,3 @@ module InputProcessor
     end
   end
 end
-
-
-

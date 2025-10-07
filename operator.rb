@@ -19,8 +19,12 @@ module Operator
       Register::storage_num(input, false, true)
       return
     when OPERATIONS[:EVALUATE_RETURN]
-      Register::storage_num(input, false, false)
-      LogicModule::interpreter(FirstOperand, SecondOperand, OperatorCurrent)
+      if FirstOperand.empty?
+        puts "please enter something"
+      else
+        Register::storage_num(input, false, false)
+        LogicModule::interpreter(FirstOperand, SecondOperand, OperatorCurrent)
+      end
       return
     when OPERATIONS[:EVALUATE_EQUAL]
     else

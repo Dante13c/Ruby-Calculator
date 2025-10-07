@@ -7,13 +7,7 @@ module Operator
     
   case input
     when OPERATIONS[:ADD]
-        if FirstOperand.empty?
-          Register::storage_num(input, false, true)
-          puts "FirstOperand: #{FirstOperand}"
-        elsif SecondOperand.empty? && !FirstOperand.empty?
-          puts "addition"
-        end
-      #Register::storage_num(input, false, true)
+      Register::storage_num(input, false, true)
       return
     when OPERATIONS[:SUB]
       Register::storage_num(input, false, true)
@@ -25,8 +19,8 @@ module Operator
       Register::storage_num(input, false, true)
       return
     when OPERATIONS[:EVALUATE_RETURN]
+      Register::storage_num(input, false, false)
       LogicModule::interpreter(FirstOperand, SecondOperand, OperatorCurrent)
-      puts "First Operand:#{FirstOperand} Second Operand:#{SecondOperand} Operation: #{OperatorCurrent}"
       return
     when OPERATIONS[:EVALUATE_EQUAL]
     else

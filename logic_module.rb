@@ -1,15 +1,58 @@
+# Module Imports
+require_relative 'operator'
+
 module LogicModule
   def self.add(num_1, num_2)
-    return num_1 + num_2
+    x = Float(num_1.join)
+    y = Float(num_2.join)
+    return x + y
+  end
+
+  def self.sub(num_1, num_2)
+    x = Float(num_1.join)
+    y = Float(num_2.join)
+    return x - y
+  end
+
+  def self.mul(num_1, num_2)
+    x = Float(num_1.join)
+    y = Float(num_2.join)
+    return x * y
+  end
+
+  def self.div(num_1, num_2)
+    x = Float(num_1.join)
+    y = Float(num_2.join)
+    return x / y
   end
 
   def self.interpreter(first , second, operator)
-    if first.is_a? && second.is_a?
-      x = Float(first)
-      y = Float(second)
-      if operator == "+"
-        puts add(x, y)
-      end
+    case operator[0]
+      when Operator::OPERATIONS[:ADD]
+        result = add(first, second)
+        puts "Result: #{result}"
+        FirstOperand.clear
+        SecondOperand.clear
+        OperatorCurrent.clear
+      when Operator::OPERATIONS[:SUB]
+        result = sub(first, second)
+        puts "Result: #{result}"
+        FirstOperand.clear
+        SecondOperand.clear
+        OperatorCurrent.clear
+      when Operator::OPERATIONS[:MUL]
+        result = mul(first, second)
+        puts "Result: #{result}"
+        FirstOperand.clear
+        SecondOperand.clear
+        OperatorCurrent.clear
+      when Operator::OPERATIONS[:DIV]
+        result = div(first, second)
+        puts "Result: #{result}"
+        FirstOperand.clear
+        SecondOperand.clear
+        OperatorCurrent.clear
+      
     end
   end
 end

@@ -18,13 +18,17 @@ module Register
         @register_1.push(char)
         print "Register 1: #{@register_1}\n"
       when !is_num && is_operator
-        if OperatorCurrent.empty?
-          OperatorCurrent.push(char) 
-          print "Operator: #{OperatorCurrent}\n"
-          FirstOperand.push(@register_1)
-          @register_1 = []
-        else 
-          return
+        if @register_1.empty?
+          puts "cant do it bud, sorry nothings here!"
+        else
+          if OperatorCurrent.empty?
+            OperatorCurrent.push(char) 
+            print "Operator: #{OperatorCurrent}\n"
+            FirstOperand.push(@register_1)
+            @register_1 = []
+          else 
+            return
+          end
         end
       else
         SecondOperand.push(@register_1)

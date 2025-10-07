@@ -3,27 +3,27 @@ require_relative 'operator'
 
 module LogicModule
   def self.add(num_1, num_2)
-    x = Float(num_1.join)
-    y = Float(num_2.join)
+    x = Float(num_1.join) rescue 0
+    y = Float(num_2.join) rescue 0
     return x + y
   end
 
   def self.sub(num_1, num_2)
-    x = Float(num_1.join)
-    y = Float(num_2.join)
+    x = Float(num_1.join) rescue 0
+    y = Float(num_2.join) rescue 0
     return x - y
   end
 
   def self.mul(num_1, num_2)
-    x = Float(num_1.join)
-    y = Float(num_2.join)
+    x = Float(num_1.join) rescue 0
+    y = Float(num_2.join) rescue 0
     return x * y
   end
 
   def self.div(num_1, num_2)
-    x = Float(num_1.join)
-    y = Float(num_2.join)
-    return x / y
+    x = Float(num_1.join) rescue 0
+    y = Float(num_2.join) rescue 0
+    return x / y rescue "woah there brotha!, i cant divide nothing by nothing?"
   end
 
   def self.interpreter(first , second, operator)

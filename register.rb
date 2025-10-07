@@ -15,6 +15,7 @@ module Register
 
     case
       when is_num && !is_operator
+        return if (@register_1.include?(".") && char == ".") || @register_1.empty? && char == "." 
         @register_1.push(char)
         runnin_current = @register_1.join
         system('clear')

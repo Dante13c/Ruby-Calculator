@@ -27,6 +27,14 @@ module Operator
       end
       return
     when OPERATIONS[:EVALUATE_EQUAL]
+      if FirstOperand.empty?
+        puts "please enter something"
+      else
+        Register::storage_num(input, false, false)
+        LogicModule::interpreter(FirstOperand, SecondOperand, OperatorCurrent)
+      end
+      return
+
     else
       Register::storage_num(input, true, false)
     end
